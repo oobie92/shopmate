@@ -1,0 +1,8 @@
+.counter-button {
+    cursor: pointer;
+    background: grey;
+    border: none;
+    border-radius: 40%;
+    width: 30px;
+    text-align: center;
+}

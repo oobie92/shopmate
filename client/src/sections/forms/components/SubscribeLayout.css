@@ -1,0 +1,25 @@
+.subscribe-layout {
+    background: #efefef;
+}
+
+.subscribe-layout form {
+    padding: 10px 180px 20px 180px;
+    text-align: center;
+}
+
+.subscribe-layout h1 {
+    color : #f62f5e;
+    margin-top: auto;
+    font-size: 30px;
+}
+
+.subscribe-layout input {
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 50px;
+    height: 22px;
+    padding: 2.5px 20px;
+    border: rgba(0,0,0,.5);
+    /* box-shadow: 0 0 10px rgba(0,0,0,.5); */
+}

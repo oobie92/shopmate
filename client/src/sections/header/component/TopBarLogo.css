@@ -1,0 +1,12 @@
+.top-bar-logo {
+    /* left: 0;     */
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    padding-right: 100px;
+    line-height: 240%;
+    color: #f62f5e;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+.top-bar-item {
+    padding: 20px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 240%;
+    color: #2e2e2e;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #2e2e2e;
+}
+                        

@@ -1,0 +1,34 @@
+.Modal {
+    max-width: 868px;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    background:  white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+  }
+  
+  .Modal-close {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .Modal-close:after {
+    content: "X";
+    font-weight: bold;
+    font-size: 30px;
+  }
+  

@@ -1,0 +1,13 @@
+span {
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+
+.icon-bag {
+    background: url(../../icons/bag.PNG);
+}
+
+.icon-search {
+    background: url(../../icons/search.PNG);
+}

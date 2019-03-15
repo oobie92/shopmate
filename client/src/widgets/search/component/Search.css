@@ -1,0 +1,25 @@
+.search {
+    padding: 25px 25px 25px 150px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-input {
+    height: 25px;
+    width: 250px;
+    border: none;
+}
+
+.search-input:focus {
+    border-radius: 50px;
+    border:  rgba(0,0,0,.5);
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}

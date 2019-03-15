@@ -1,0 +1,10 @@
+.shopping-cart-main-layout {
+    margin-left: 40px;
+    margin-top: 5px;
+    overflow-y: scroll;
+    height: 65%;
+}
+
+.shopping-cart-main-layout div {
+    margin-top: 10px;
+}

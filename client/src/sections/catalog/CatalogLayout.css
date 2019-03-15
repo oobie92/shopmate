@@ -1,0 +1,7 @@
+.catalog-layout {
+    display: -webkit-inline-box;
+    width: 100%;
+    /* background: #f7f7f7; */
+    margin-left: 20px;
+    margin-right: 20px;
+}

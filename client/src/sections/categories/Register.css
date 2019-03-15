@@ -1,0 +1,62 @@
+.register {
+    background: #f7f7f7;
+    width: 100%;
+    display: -webkit-inline-box;
+}
+
+.register-img {
+    background: url(../../assets/register-section.jpeg);
+    background-position-y: -200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+    height: 500px;
+}
+
+.seasonal {
+    background: url(../../assets/seasonal.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+    margin-bottom: 20px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.nature {
+    background: url(../../assets/nature.jpeg);
+    background-repeat: no-repeat;
+    background-position-x: -50px;
+    background-size: cover;
+    opacity: .8;
+    margin-top: 10px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.categories-side {
+    /* display: inline-grid; */
+    width: 30%;
+    padding: 20px;
+}
+
+.register-side {
+    background: #ffffff;
+    width: 65%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 0px 20px 0px;
+}
+
+.register-layer {
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+}
+            
+.register-layer h1 {
+    margin: unset;
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}

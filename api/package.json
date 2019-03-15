@@ -1,0 +1,40 @@
+{
+  "name": "shopmate-db",
+  "version": "1.0.0",
+  "description": "ShopMate's ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js",
+    "dev": "nodemon index.js",
+    "lint": "standard --fix",
+    "tests": "nyc --reporter=html ava tests/ --verbose"
+  },
+  "author": "Diego Mendez <diegomarmcfly@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "defaults": "^1.0.3",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.5",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.5",
+    "paypal-rest-sdk": "^1.8.1",
+    "redis": "^2.8.0",
+    "sequelize": "^4.42.1",
+    "stripe": "^6.26.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "ava": "^1.3.1",
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^7.2.7",
+    "standard": "^12.0.1",
+    "supertest": "^4.0.0"
+  }
+}

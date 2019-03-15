@@ -1,0 +1,28 @@
+
+.shopping-cart-header {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.shopping-cart-header h3 {
+    display: inline;
+    border-bottom: 1px solid #b4b4b4;
+    padding-bottom: 3px;
+    color: #b4b4b4;
+}
+
+.shopping-cart-header span {
+    display: inline;
+}
+
+.shopping-cart-header .first {
+    margin-right: 50%;
+}
+
+.shopping-cart-header .att {
+    margin-right: 80px;
+}
+ 
+/* .shopping-cart-header .last {
+    margin-right: 50%;
+} */

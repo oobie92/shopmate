@@ -1,0 +1,14 @@
+.shop-counter {
+    right: 35px;
+    top: 10px;
+    position: absolute;
+    background: red;
+    color: #fff;
+    font-weight: 900;
+    font-size: 10px;
+    padding-bottom: 0px;
+    margin: 0;
+    width: 20px;
+    text-align: -webkit-center;
+    border-radius: 100%
+}

@@ -1,0 +1,6 @@
+.footer-box {
+    display: grid;
+    text-align: -webkit-left;
+    padding: 20px;
+    margin-right: 15%;
+}

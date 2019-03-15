@@ -1,0 +1,39 @@
+button {
+    margin-bottom: 15px;
+}
+
+.button-small {
+    /* color: #F62F5E;
+    background: #FFFFFF; */
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 240%;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    padding: 2.5px 20px;
+    cursor: pointer;
+}
+
+.button-medium {
+    /* color: #F62F5E;
+    background: #FFFFFF; */
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 240%;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    padding: 5px 40px;
+    cursor: pointer;
+}
+
+.button-big {
+    /* color: #F62F5E;
+    background: #FFFFFF; */
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 240%;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    padding: 10px 80px;
+    cursor: pointer;
+}

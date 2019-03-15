@@ -1,0 +1,8 @@
+.footer-layout {
+    left: 0;
+    right: 0;
+    height: auto;
+    background: #fff;
+    display: -webkit-box;
+    margin-bottom: 50px;
+}

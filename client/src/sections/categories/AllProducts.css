@@ -1,0 +1,37 @@
+.all-products {
+    background: url(../../assets/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -100px;
+    height: 500px;
+}
+
+.all-products div {
+    margin-left: 300px;
+    width: 400px;
+}
+
+.button-all {
+    color: #F62F5E;
+    background: #FFFFFF;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 240%;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    padding: 5px 40px;
+    cursor: pointer;
+}
+
+.all-products h1 {
+    padding-top: 50px;
+    margin-top: auto;
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+.all-products p {
+    font-size: 30px;
+    font-weight: 400;
+    color: #FFFFFF;
+}

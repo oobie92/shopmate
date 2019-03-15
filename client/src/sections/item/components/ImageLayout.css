@@ -1,0 +1,26 @@
+.image-layout {
+    width: 600px;
+}
+
+.image-layout div {
+    margin-top: -40px;
+    margin-left: 50px;
+}
+
+
+.image-layout .principal {
+    width: 450px;
+    height: 400px;
+    padding: 50px;
+}
+
+img.thumb {
+    height: 90px;
+    width: 90px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+img.thumb:hover {
+    border: 1px solid #ff0000;
+}
