@@ -28,17 +28,17 @@ module.exports = function setupCustomer (CustomerModel) {
     customer.name = body.name
     customer.email = body.email
     customer.password = body.password
-    customer.credit_card = body.credit_card
-    customer.address_1 = body.address_1
-    customer.address_2 = body.address_2
-    customer.city = body.city
-    customer.region = body.region
-    customer.postal_code = body.postal_code
-    customer.country = body.country
-    customer.shipping_region_id = body.shipping_region_id
-    customer.day_phone = body.day_phone
-    customer.eve_phone = body.eve_phone
-    customer.mob_phone = body.mob_phone
+    customer.credit_card = body.credit_card || ''
+    customer.address_1 = body.address_1 || ''
+    customer.address_2 = body.address_2 || ''
+    customer.city = body.city || ''
+    customer.region = body.region || ''
+    customer.postal_code = body.postal_code || ''
+    customer.country = body.country || ''
+    customer.shipping_region_id = body.shipping_region_id || ''
+    customer.day_phone = body.day_phone || ''
+    customer.eve_phone = body.eve_phone || ''
+    customer.mob_phone = body.mob_phone || ''
 
     if (body.password) {
       // Encript pass
