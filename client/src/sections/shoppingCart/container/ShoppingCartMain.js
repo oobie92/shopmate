@@ -24,14 +24,14 @@ class ShoppingCartMain extends Component {
         const {cartItems} = this.props
         return(
             <ShoppingCartMainLayout>
-                {/* <StripeProvider apiKey="pk_test_A8jtA9H7qJJvGpCNrQEhHOK7">
+                <StripeProvider apiKey="pk_test_A8jtA9H7qJJvGpCNrQEhHOK7">
                     <div className="example">
                     <h1>React Stripe Elements Example</h1>
                     <Elements>
                         <StripeForm />
                     </Elements>
                     </div>
-                </StripeProvider> */}
+                </StripeProvider>
                 {
                     cartItems.length > 0
                     ? cartItems.map((item, index) => (

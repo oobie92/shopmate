@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter, Link, Redirect } from 'react-router-dom'
 import * as actions from '../../../_actions/authentication.action'
 import Button from '../../../widgets/button/Button'
 
@@ -26,8 +26,12 @@ class SignIn extends Component {
     }
 
     render(){
-        if(localStorage.getItem('user')){
-            window.location.reload()
+        const { loggedIn } = this.props
+        console.log(loggedIn)
+        if(loggedIn === true){
+            return(
+                <Redirect to='/' />
+            )
         }
         return(
             <form onSubmit={this.handleSubmit}>
@@ -45,9 +49,13 @@ class SignIn extends Component {
 }
 
 function mapStateToProps(state, props){
-    const user = state.get('user')
+    // const loggingIn = false
+    // if(state.get('user').get('loggingIn')){
+        // console.log(state.get('authentication'))
+    const loggedIn = state.get('authentication').get('loggedIn')
+    // }
     return{
-        user
+        loggedIn
     }
 }
 
