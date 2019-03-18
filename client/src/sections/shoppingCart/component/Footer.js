@@ -23,8 +23,6 @@ const Footer = props => {
                     color={'#ffffff'}
                     background={'#f62f5e'} />
             </div>
-            {/* <input onClick={(e) => props.closeShoppingCart(e)} className='back' type='button' value='Back to shop' /> */}
-            {/* <input className='checkout' type='button' value='Checkout' /> */}
         </div>
     )
 }

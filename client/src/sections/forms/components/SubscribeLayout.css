@@ -23,3 +23,15 @@
     border: rgba(0,0,0,.5);
     /* box-shadow: 0 0 10px rgba(0,0,0,.5); */
 }
+
+@media screen and (max-width : 500px){
+    .subscribe-layout form {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .subscribe-layout input {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 20px;
+    }
+}

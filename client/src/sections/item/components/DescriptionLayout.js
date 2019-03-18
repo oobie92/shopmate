@@ -11,8 +11,8 @@ const DescriptionLayout = (props) => {
     return(
         <div className='description-layout'>
             <h1 className='title'>{`${product.name} - ${product.description}`}</h1>
-            <h1 className={props.priceStyle}>{product.price}</h1>
-            <h3 className={props.discountStyle}>{product.discounted_price}</h3>
+            <h1 className={`price-${props.discountStyle}`}>{product.price}</h1>
+            <h3 className={`discount-${props.discountStyle}`}>{product.discounted_price}</h3>
             <span className='att'>color</span>
             <Color {...props} />
             <span className='att'>size</span>

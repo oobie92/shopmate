@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable'
+import { getItems } from '../util/getItems'
 
 const initialState = fromJS({
     items : [],
@@ -8,17 +9,13 @@ const initialState = fromJS({
 const shopingCart = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ITEMS_SUCCESS' :
-      return state.set('quantity', action.payload.item.length)
+      return state.set('quantity', getItems(action.payload.item))
                   .set('items', action.payload.item)
     case 'ADD_ITEM_SUCCESS':
-    console.log(state.get('items'))
-    console.log(state.get('quantity'))
-    console.log(action)
-      // return state.updateIn(['items'], arr => arr.push(action.payload.item))
       return state.set('items', action.payload.item)
-                  .set('quantity', action.payload.quantity)
+                  .set('quantity', getItems(action.payload.item))
     case 'DELETE_ITEM_SUCCESS':
-      return state.set('quantity', action.payload.item.length)
+      return state.set('quantity', getItems(action.payload.item))
                   .set('items', action.payload.item)
     default:
       return state

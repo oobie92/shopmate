@@ -24,3 +24,11 @@ img.thumb {
 img.thumb:hover {
     border: 1px solid #ff0000;
 }
+
+@media screen and (max-width : 500px){
+    .image-layout .principal {
+        width: 52%;
+        height: 400px;
+        padding: 50px;
+    }
+}

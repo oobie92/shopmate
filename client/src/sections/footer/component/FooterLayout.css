@@ -6,3 +6,9 @@
     display: -webkit-box;
     margin-bottom: 50px;
 }
+
+@media screen and (max-width : 500px) {
+    .footer-layout {
+        display: block;
+    }
+}

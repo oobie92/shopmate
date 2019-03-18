@@ -18,8 +18,16 @@ export const addItem = (item) => {
         shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
     } 
     
+    if(shoppingCart.find((itemCart) =>{ return itemCart.product_id===item.product_id}) === undefined){
+        shoppingCart.push(item)  
+    } else {
+        shoppingCart.map(itemCart => {
+            if(itemCart.product_id===item.product_id){
+                itemCart.quantity += item.quantity
+            }
+        })
+    }
     
-    shoppingCart.push(item)  
     localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
     return Promise.resolve(shoppingCart)
     // : 

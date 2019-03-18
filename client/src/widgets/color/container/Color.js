@@ -16,7 +16,11 @@ class Color extends Component {
                         if(attribute.attribute_name ==='Color'){
                             return (
                                 <label>
-                                  <input id={attribute.attribute_value} key={index} type='radio'  />
+                                  <input 
+                                    id={attribute.attribute_value} 
+                                    key={index} 
+                                    type='radio' 
+                                    name={attribute.attribute_name} />
                                   {attribute.attribute_value}
                                 </label>
                                 )

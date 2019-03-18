@@ -49,12 +49,15 @@ class Products extends Component {
     }
 
     render(){
-        const {products} = this.props
+        const {products, total, pages} = this.props
         return(
             <ProductsLayout>
                 {
                     Object.keys(products).length!=0 ?
                     <Catalog 
+                        total={total}
+                        pages={pages}
+                        next={this.next}
                         itemClickHandle={this.itemClickHandle} 
                         items={products} />
                     : ''
@@ -64,11 +67,6 @@ class Products extends Component {
                         pathname: "/products",
                         search: "?page=2"
                     }}>2</NavLink> */}
-
-                <div onClick={(e) => this.next(e, 1)}>1</div>
-                <div onClick={(e) => this.next(e, 2)}>2</div>
-                <div onClick={(e) => this.next(e, 3)}>3</div>
-                <div onClick={(e) => this.next(e, 4)}>4</div>
             </ProductsLayout>
         )
     }
@@ -77,8 +75,12 @@ class Products extends Component {
 
 function mapStateToProps(state, props){
     const products = state.get('products').get('products')
+    const total = state.get('products').get('total')
+    const pages = state.get('products').get('pages')
     return{
-        products
+        products,
+        total,
+        pages
     }
 }
 

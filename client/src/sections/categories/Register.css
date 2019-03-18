@@ -60,3 +60,30 @@
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+@media screen and (max-width : 500px) {
+
+    .register {
+        display: block;
+    }
+
+    .register-side {
+        width: 95%;
+        padding: 0px 20px 20px 0px;
+    }
+
+    .register-layer {
+        padding-left: unset;
+        padding-right: unset;
+    }
+
+    .register-img {
+        background-position: 20px 10px;
+    }
+
+    .categories-side {
+        /* display: initial; */
+        width: initial;
+        padding: 20px;
+    }
+}

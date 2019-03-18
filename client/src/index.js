@@ -27,7 +27,7 @@ const store = createStore(
     map(),
     composeWithDevTools(
         applyMiddleware(
-            logger,
+            // logger,
             thunk
         )
     )

@@ -6,6 +6,8 @@ const initialState = fromJS({
     isFetching : false,
     entities : {},
     products : {},
+    total : 0,
+    pages : 0,
     currentPage : 1
 })
 
@@ -18,6 +20,8 @@ const products = (state = initialState, action) => {
             return state.set('isFetching', false)
                         .set('entities', entities)
                         .set('products', entities.product)
+                        .set('total', action.products.count)
+                        .set('pages', Math.ceil(action.products.count/action.products.rows.length))
                         .set('currentPage', action.page)        
         case 'ATTRIBUTES_SUCCESS' :
             return state.set('attributes', action.attributes)      

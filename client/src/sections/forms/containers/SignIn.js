@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import * as actions from '../../../_actions/authentication.action'
 import Button from '../../../widgets/button/Button'
 
@@ -38,6 +38,7 @@ class SignIn extends Component {
                 <input type='button' value='login' onClick={(e) => {
                     this.loginHandle(e, this.email.value, this.pass.value)
                 }} />
+                <Link to='/register'>register</Link>
             </form>
         )
     }

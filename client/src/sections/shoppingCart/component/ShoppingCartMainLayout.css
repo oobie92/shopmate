@@ -8,3 +8,31 @@
 .shopping-cart-main-layout div {
     margin-top: 10px;
 }
+
+.shopping-cart-main-layout .item {
+    display: -webkit-box;
+}
+.shopping-cart-main-layout .quantity {
+    position: absolute;
+    right: 245px;
+    
+}
+
+.shopping-cart-main-layout .price{
+    right: 90px;
+    color: #f62f5e;
+    position: absolute;
+}
+
+.shopping-cart-main-layout .item {
+    display: -webkit-box;
+}
+
+.shopping-cart-main-layout .item div {
+    display: block;
+    margin-left: 20px;
+}
+
+.shopping-cart-main-layout .item button {
+    border: 1px solid;
+}

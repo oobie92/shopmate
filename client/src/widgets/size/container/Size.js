@@ -4,7 +4,13 @@ class Size extends Component {
 
     constructor(props){
         super(props)
+        // this.change = this.change.bind(this)
     }
+
+    // change(e) {
+    //     console.log('HOLAAAA')
+    //     console.log(e.currentTarget.value)
+    // }
 
     render(){
         const {attributes} = this.props
@@ -16,7 +22,12 @@ class Size extends Component {
                         if(attribute.attribute_name ==='Size'){
                             return (
                                 <label>
-                                  <input id={attribute.attribute_value} key={index} type='radio'  />
+                                  <input onClick={this.props.change}
+                                    id={attribute.attribute_value} 
+                                    key={index} 
+                                    value={attribute.attribute_value}
+                                    type='radio' 
+                                    name={attribute.attribute_name} />
                                   {attribute.attribute_value}
                                 </label>
                                 )

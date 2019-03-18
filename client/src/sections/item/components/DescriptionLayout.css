@@ -2,8 +2,25 @@ span.att {
     color: #b4b4b4;
 }
 
+.price-dicounted {
+    text-decoration-line: line-through;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .price {
     color: #f62f5e;
+}
+
+.discount-dicounted {
+    font-size: 30px;
+    color: #f62f5e;
+    margin: 0;
+}
+
+.discount-none {
+    display: none;
 }
 
 .description-layout {
@@ -14,3 +31,10 @@ span.att {
     margin-right: 650px;
 }
 
+@media screen and (max-width : 500px){
+    .title {
+        margin-left: 10px;  
+        margin-right: 10px;
+        font-size: 25px;
+    }
+}

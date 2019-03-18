@@ -4,13 +4,15 @@ import products from './products.reducer'
 import shoppingCart from './shopingCart.reducer'
 import modal from './modalShoppingCart.reducer'
 import reviews from './review.reducer'
+import stripe from './stripe.reducer'
 
 const rootReducers = combineReducers({
     data,
     products,
     shoppingCart,
     modal,
-    reviews
+    reviews,
+    stripe
 })
 
 export default rootReducers

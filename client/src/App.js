@@ -114,7 +114,7 @@ class App extends Component {
               ? <Redirect to="/"/> 
               : <SignIn />
               )} />
-            <Route exact={true} path='/products:page?' render={ props => <Products {...props} /> } />
+            {/* <Route exact={true} path='/products:page?' render={ props => <Products {...props} /> } /> */}
             <Route exact={true} path='/products' render={ props => <Products {...props} /> } />
             <Route exact={true} path='/products/:id' render={()=>(
                <Item />

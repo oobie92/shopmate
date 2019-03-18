@@ -6,7 +6,7 @@ export const departments = () => {
         headers : { 'Content-Type' : 'application/json'}
     }
 
-    return fetch('https://oobie92.com/departments', requestOptions).then(handleResponse)
+    return fetch('https://oobie92.com/api/departments', requestOptions).then(handleResponse)
         
 
 }

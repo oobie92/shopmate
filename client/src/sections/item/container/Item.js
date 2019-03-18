@@ -19,6 +19,8 @@ class Item extends Component {
         super(props)
         this.addToCart = this.addToCart.bind(this)
         this.focus = this.focus.bind(this)
+        this.change = this.change.bind(this)
+        
     }
     
     componentDidMount(){
@@ -27,6 +29,10 @@ class Item extends Component {
         this.props.actions.getAttributes(id)
         this.props.actionsReview.getReviews(id)
         // console.log(this)
+    }
+
+    change(e) {
+        console.log(e.currentTarget.value)
     }
 
     addToCart(e, item){
@@ -57,10 +63,16 @@ class Item extends Component {
                                     focus={this.focus}
                                     product={product} />
                                 <DescriptionLayout
+                                    change={this.change}
                                     attributes={attributes}
                                     addToCart={this.addToCart}
                                     product={product} 
                                     priceStyle='price'
+                                    discountStyle={
+                                        product.discounted_price !== "0.00" 
+                                        ? 'dicounted' 
+                                        : 'none'
+                                    }
                                     />
                             </ItemCover>
                             
