@@ -1,7 +1,5 @@
 .top-bar {
-    left : 0;
-    right : 0;
+    width: 100%;
     background: #fff;
     display: -webkit-inline-box;
-    /* padding: 10px; */
 }

@@ -21,6 +21,9 @@ function departments(state = initialState, action){
                         .set('departments', entities.departments)
                         .set('entities', entities)
         }
+        case 'CATEGORIES_SUCCESS' : {
+            return state.set('categories', action.categories)
+        }
         default : 
             return state;
     }

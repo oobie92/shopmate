@@ -10,3 +10,14 @@ export const departments = () => {
         
 
 }
+
+export const categoriesByDepartment = id => {
+    const requestOptions = {
+        method : 'GET',
+        headers : { 'Content-Type' : 'application/json'}
+    }
+
+    return fetch(`https://oobie92.com/api/categories/idDepartment/${id}`, requestOptions).then(handleResponse)
+        
+
+}

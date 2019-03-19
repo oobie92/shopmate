@@ -27,7 +27,7 @@ img.thumb:hover {
 
 @media screen and (max-width : 500px){
     .image-layout .principal {
-        width: 52%;
+        width: 65%;
         height: 400px;
         padding: 50px;
     }

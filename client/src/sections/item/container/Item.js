@@ -32,14 +32,12 @@ class Item extends Component {
     }
 
     change(e) {
-        // console.log(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
     addToCart(e, item){
         e.preventDefault()
-        console.log(item)
         item.quantity += 1
-        console.log(item)
         this.props.actionsCart.addItem(item)
     }
 

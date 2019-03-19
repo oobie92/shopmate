@@ -11,17 +11,6 @@ const Catalog = (props) => {
     return(
         <CatalogContent>
             <h4 className='catalog-props'>{props.total} results, {props.pages} pages</h4>
-            {/* {
-                props.pages !== 0
-                ? for(var i = 0 ; i> 0 ; i--){
-                        return(
-                            <PageButton/>
-                        )
-                    }
-                    
-
-                
-            } */}
             <CatalogLayout>
                 {
                     Object.keys(items).length!==0 ?

@@ -1,0 +1,20 @@
+.modal-container {
+    display: block;
+    max-width: 268px;
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.modal-container a {
+    display: -webkit-box;
+    margin-bottom: 20px;
+}

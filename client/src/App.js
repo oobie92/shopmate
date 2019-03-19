@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-
 import * as actions from './_actions/data.action'
 import * as actionsCart from './_actions/shopingCart.action'
 import * as actionsModal from './_actions/modalShoppingCart.action'
+import * as actionsCategoriesModal from './_actions/modalCategories.action'
 import Header from './sections/header/container/Header'
 import Main from './pages/home/component/Main'
 import Home from './pages/home/container/Home';
@@ -23,6 +24,10 @@ import SignUp from './sections/forms/containers/SignUp'
 import SignIn from './sections/forms/containers/SignIn'
 import ShoppingCartModal from './sections/shoppingCart/container/ShoppingCartModal'
 import ShoppingCart from './sections/shoppingCart/component/ShoppingCart'
+import CategoriesModal from './sections/categories/container/CategoriesModal'
+import Categories from './sections/categories/Categories'
+import ProductsByDepartment from './pages/products/container/ProductsByDepartment';
+import ProductsByCategory from './pages/products/container/ProductsByCategory';
 
 class App extends Component {
 
@@ -30,6 +35,8 @@ class App extends Component {
     super(props)
     this.closeShoppingCart = this.closeShoppingCart.bind(this)
     this.openShoppingCart = this.openShoppingCart.bind(this)
+    this.openCategories = this.openCategories.bind(this)
+    this.closeCategories = this.closeCategories.bind(this)
   }
 
   componentDidMount(){
@@ -42,14 +49,31 @@ class App extends Component {
     this.props.actionsModal.openModal()
   }
 
+  openCategories(e, id){
+    e.preventDefault()
+    this.props.actions.categoriesByDepartment(id)
+    this.props.actionsCategoriesModal.openModal()
+  }
+
+  closeCategories(e){
+    e.preventDefault()
+    this.props.actionsCategoriesModal.closeModal()
+  }
+
   closeShoppingCart(e){
     e.preventDefault()
     this.props.actionsModal.closeModal()
   }
 
   render() {
-    const {isLoading, loggedIn, cart, cartItems, modal, departments} = this.props
-    // console.log(cart)
+    const {
+      isLoading, 
+      cart, 
+      cartItems, 
+      modal, 
+      departments, 
+      categories, 
+      modalCategories} = this.props
     return (
       <Router>        
         { 
@@ -58,46 +82,44 @@ class App extends Component {
           <Header>
               <TopBar>
                   <TopBarLogo />    
-                  {/* {
+                  {
                     departments !== undefined ?
                     Object.keys(departments).length!==0 ?
                     Object.keys(departments).map((key) => (
-                      <TopBarItem key >
-                        <NavLink activeStyle={{
-                              textDecoration : 'none',
-                              color : 'red'
-                            }} to={`/g/${departments[key].name}`}>
-                                {departments[key].name || 'no_description'}
-                        </NavLink>
+                      <TopBarItem >
+                        <div onMouseOver={(e) => this.openCategories(e, departments[key].department_id)} >
+                          {departments[key].name}
+                        </div>
                       </TopBarItem>                
                     )) : ''
-                    : ''
-                  } */}
-                  {department ?
-                      department.map(item => (
-                        <TopBarItem key={item.id}>
-                          <NavLink activeStyle={{
-                            textDecoration : 'none',
-                            color : 'red'
-                          }} to={`/g/${item.name}`}>
-                              {item.name || 'no_description'}
-                          </NavLink>
-                          </TopBarItem>                
-                      )) : <div>Loading...</div> 
+                    : department.map((item, index) => (
+                      <TopBarItem key={index}>
+                        <div onClick={this.openCategories} >
+                          {item.name}
+                        </div>
+                        </TopBarItem>                
+                    ))
                   }
                   <Search />
                   <TopBarItem>
-                      {/* {
-                        cart.length > 0
-                        ?  */}
                       <ShopCounter cart={cart} />
-                        {/* : ''
-                      } */}
                       <Icon openShoppingCart={this.openShoppingCart} iconName='icon-bag' />
                   </TopBarItem>
               </TopBar>
           </Header>
           <Main>
+            {
+              modalCategories &&
+              <CategoriesModal>
+                <Categories 
+                  categories={categories}
+                  closeModal={this.closeCategories}
+                  // cart={cart}
+                  // cartItems={cartItems}
+                  // closeShoppingCart={this.closeShoppingCart} 
+                />
+              </CategoriesModal>
+            }
             {
               modal &&
               <ShoppingCartModal>
@@ -114,11 +136,12 @@ class App extends Component {
               ? <Redirect to="/"/> 
               : <SignIn />
               )} />
-            {/* <Route exact={true} path='/products:page?' render={ props => <Products {...props} /> } /> */}
             <Route exact={true} path='/products' render={ props => <Products {...props} /> } />
-            <Route exact={true} path='/products/:id' render={()=>(
-               <Item />
-             )} />
+            <Route exact={true} path='/products/inDepartment/:id' 
+              render={ props => <ProductsByDepartment {...props} /> } />
+            <Route exact={true} path='/products/inCategory/:id' 
+              render={ props => <ProductsByCategory {...props} /> } />
+            <Route exact={true} path='/products/:id' render={ props => <Item {...props} /> } />
             <Route path={`/g/:id`} render={Test} />
             <Route path={`/help`} render={Test} />
             <Route path={`/track-order`} render={Test} />
@@ -134,10 +157,16 @@ class App extends Component {
               </FooterBox>
               <FooterBox>
                 <h3>WHAT'S IN STORE?</h3>
-                <NavLink to='/women'>Women</NavLink>
-                <NavLink to='/men'>Men</NavLink>
                 <NavLink to='/products'>Product A-Z</NavLink>
-                <NavLink to='/vouchers'>Buy Gift Vouchers</NavLink>
+                {
+                  departments !== undefined 
+                  ? Object.keys(departments).map((key) => (
+                      <NavLink to={`/products/inDepartment/${departments[key].department_id}`} >
+                        {departments[key].name}
+                      </NavLink>                
+                    )) 
+                  : ''
+                }
               </FooterBox>
               <FooterBox>
                 <h3>FOLLOW US</h3>
@@ -167,54 +196,36 @@ const Test = ({match}) => {
 const department = [
   {
       id : 1,
-      name : 'Women'
+      name : 'Regional'
   },
   {
       id : 2,
-      name : 'Men'
+      name : 'Nature'
   },
   {
       id : 3,
-      name : 'Kids'
-  },
-  {
-      id : 4,
-      name : 'Shoes'
-  },    
-  {
-      id : 5,
-      name : 'Brands'
+      name : 'Seasonal'
   }    
 ]
 
 function mapStateToProps(state, props){
   
-
   const isLoading = state.get('isLoading')
   const cart = state.get('shoppingCart').get('quantity')
   const cartItems = state.get('shoppingCart').get('items')
   const modal = state.get('modal').get('visible')
+  const modalCategories = state.get('modalCategories').get('visible')
+  const departments = state.get('data').get('departments')
+  const categories = state.get('data').get('categories')
 
-  // console.log(departments)
-  // if(state.get('data').get('departments') !==undefined){
-
-    const departments = state.get('data').get('departments')
-    // departments.toArray().map(department => {
-      // console.log(departments.values())
-    // })
-
-    // Object.keys(departments).length!==0 ?
-    // Object.keys(departments).map((key, value) => {
-    //   console.log(departments[value])
-    // }) : console.log('valor')
-
-  // }
   return {
     departments,
+    categories,
     isLoading,
     cart,
     cartItems,
-    modal
+    modal,
+    modalCategories
   }
 }
 
@@ -222,7 +233,8 @@ function mapDispatchToProps(dispatch){
   return {
     actions : bindActionCreators(actions, dispatch),
     actionsCart : bindActionCreators(actionsCart, dispatch),
-    actionsModal : bindActionCreators(actionsModal, dispatch)
+    actionsModal : bindActionCreators(actionsModal, dispatch),
+    actionsCategoriesModal : bindActionCreators(actionsCategoriesModal, dispatch)
   }
 }
 

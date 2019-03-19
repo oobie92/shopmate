@@ -1,45 +1,31 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect} from 'react-redux'
-import { withRouter, NavLink } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import * as actions from '../../../_actions/products.action'
 import * as actionCart from '../../../_actions/shopingCart.action'
 import ProductsLayout from '../components/ProductsLayout';
 import Catalog from '../../../sections/catalog/Catalog';
 
-class Products extends Component {
+class ProductsByCategory extends Component {
     constructor(props){
         super(props)
         this.itemClickHandle = this.itemClickHandle.bind(this)
         this.next = this.next.bind(this)
     }
 
-    componentDidUpdate(prevProps) {
-        // if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
-        //   const { dispatch, selectedSubreddit } = this.props
-        //   dispatch(fetchPostsIfNeeded(selectedSubreddit))
-        // }
-      }
-
-    // UNSAFE_componentWillUpdate(nextProps, nextState){
-    //     const { page } = this.props.match.params
-    //     return nextProps.params.page === page
-
-    // }
-
     componentDidMount(){
         const { id } = this.props.match.params
-        console.log(this.props)
-        console.log(id)
-        this.props.actions.getAll()
+        this.props.actions.getByCategory(id)
     }
-
+    
     next(e, page){
         e.preventDefault()
-        this.props.actions.getAll(page)
+        const { id } = this.props.match.params
+        this.props.actions.getByCategory(id, page)
         this.props.history.push(
             {
-                pathname: '/products',
+                pathname: '/products/inCategory',
                 search: `?page=${page}`,
             }
         )
@@ -62,7 +48,7 @@ class Products extends Component {
                         next={this.next}
                         itemClickHandle={this.itemClickHandle} 
                         items={products} />
-                    : ''
+                    : <div>Loading</div>
                 }
             </ProductsLayout>
         )
@@ -88,4 +74,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductsByCategory))

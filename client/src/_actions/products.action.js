@@ -1,4 +1,9 @@
-import { getAllProducts, getProductById, getAttributes as getAttributesService } from '../_services/products.service'
+import { 
+    getAllProducts, 
+    getAllProductsByDepartment,
+    getAllProductsByCategory,
+    getProductById, 
+    getAttributes as getAttributesService } from '../_services/products.service'
 
 export const getAll = (page = 1) => {
 
@@ -17,6 +22,40 @@ export const getAll = (page = 1) => {
     function success(products) { return { type: 'PRODUCTS_SUCCESS', products, page}}
     function failure(error) { return { type: 'PRODUCTS_FAILURE', error}}
 
+}
+
+export const getByDepartment = (id ,page = 1) => {
+    return dispatch => {
+        dispatch(request())
+
+        getAllProductsByDepartment(id, page)
+            .then(
+                products => dispatch(success(products)),
+
+                error => dispatch(failure(error))
+            )
+    }
+
+    function request(){ return {type: 'PRODUCTS_REQUEST'}}
+    function success(products) { return { type: 'PRODUCTS_SUCCESS', products, page}}
+    function failure(error) { return { type: 'PRODUCTS_FAILURE', error}}
+}
+
+export const getByCategory = (id ,page = 1) => {
+    return dispatch => {
+        dispatch(request())
+
+        getAllProductsByCategory(id, page)
+            .then(
+                products => dispatch(success(products)),
+
+                error => dispatch(failure(error))
+            )
+    }
+
+    function request(){ return {type: 'PRODUCTS_REQUEST'}}
+    function success(products) { return { type: 'PRODUCTS_SUCCESS', products, page}}
+    function failure(error) { return { type: 'PRODUCTS_FAILURE', error}}
 }
 
 export const getById = id => {
