@@ -23,7 +23,7 @@
     "mysql2": "^1.6.5",
     "paypal-rest-sdk": "^1.8.1",
     "redis": "^2.8.0",
-    "sequelize": "^4.42.1",
+    "sequelize": "^5.3.0",
     "stripe": "^6.26.0",
     "uuid": "^3.3.2"
   },
